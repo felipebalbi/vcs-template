@@ -1,6 +1,14 @@
 	.include "atari2600.inc"
 	.export playfield_init
 	.export playfield_update
+	.export CURRENT_TIME
+	.export TIME_TO_CHANGE
+
+	.segment "BSS"
+PATTERN:	.res 1		; storage location
+CURRENT_TIME:	.res 1		; current time
+TIME_TO_CHANGE	= 20		; speed of animation
+
 
 	.segment "CODE"
 	.proc playfield_init

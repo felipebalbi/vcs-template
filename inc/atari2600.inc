@@ -9,6 +9,5 @@ __ATARI2600_INC__ = 1
 .include "atari2600_tia.inc"
 .include "atari2600_riot.inc"
 .include "macros.inc"
-.include "variables.inc"
 
 .endif				; __ATARI2600_INC__

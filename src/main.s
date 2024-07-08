@@ -2,6 +2,8 @@
 	.export main
 	.import playfield_init
 	.import playfield_update
+	.import CURRENT_TIME
+	.import TIME_TO_CHANGE
 
 	;; The actual game code starts here. This is where we would setup an
 	;; intro screen, play sound and check for user input.
