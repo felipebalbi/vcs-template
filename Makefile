@@ -21,9 +21,13 @@ QUIET_LD	= $(Q:@=@echo    '     LD       '$@;)
 # Programs
 AS		:= $(shell which ca65)
 AWK		:= $(shell which awk)
-EMU		:= $(shell which stella)
 LD		:= $(shell which ld65)
 RM		:= $(shell which rm)
+EMU		:= $(shell which stella)
+
+ifeq ($(EMU),)
+EMU		:= $(shell which Stella)
+endif
 
 # Flags
 ASFLAGS		:= -g -I inc -l $(LST)
