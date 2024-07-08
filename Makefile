@@ -37,7 +37,7 @@ LDFLAGS		:= -C $(CFG) -m $(MAP) -Ln $(LBL) --dbgfile $(DBG)
 all: $(TARGET) $(SYM)
 
 $(TARGET): $(OBJ)
-	$(QUIET_LD) $(LD) $(LDFLAGS) -o $@ $?
+	$(QUIET_LD) $(LD) $(LDFLAGS) -o $@ $^
 
 .s.o:
 	$(QUIET_AS) $(AS) $(ASFLAGS) -o $@ $<
