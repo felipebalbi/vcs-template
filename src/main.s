@@ -1,5 +1,7 @@
 	.include "atari2600.inc"
 	.export main
+	.import playfield_init
+	.import playfield_update
 
 	;; The actual game code starts here. This is where we would setup an
 	;; intro screen, play sound and check for user input.
@@ -9,6 +11,9 @@
 	;; overscan lines.
 	.segment "CODE"
 	.proc main
+
+	;; Initialize playfield
+	jsr playfield_init
 
 	;; Start a new frame by turning on vblank and vsync
 next_frame:
@@ -24,6 +29,8 @@ next_frame:
 	sta VSYNC		; disable Vertical Sync
 
 	wsync #37		; 37 scanlines of Vertical Blank
+
+	jsr playfield_update	; update the playfield
 
 	;; Draw 192 visible scanlines
 	ldx #192
