@@ -43,7 +43,7 @@ $(TARGET): $(OBJ)
 	$(QUIET_AS) $(AS) $(ASFLAGS) -o $@ $<
 
 $(SYM): $(LBL)
-	$(QUIET_GEN) $(AWK) $(AWKFLAGS) $(LBL) > $@
+	$(QUIET_GEN) grep -v __ $(LBL) | $(AWK) $(AWKFLAGS) > $@
 
 run: $(TARGET) $(SYM)
 	$(QUIET_EMU) $(EMU) $<
