@@ -6,8 +6,8 @@
 	lda #$45
 	sta COLUPF		; set the playfield color
 
-	lda #1
-	sta CTRLPF		; enable playfield reflection
+	;; lda #1
+	;; sta CTRLPF		; enable playfield reflection
 
 	rts
 	.endproc
